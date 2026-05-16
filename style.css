@@ -1,0 +1,52 @@
+.view {
+    display: none;
+}
+
+.view.active {
+    display: flex;
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4); 
+}
+
+/* Chat bubble animation */
+.chat-bubble {
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Gradient mask for chat messages */
+.mask-image-top {
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 100%);
+}
+
+/* Safe area for mobile bottoms */
+.pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 12px);
+}
